@@ -14,3 +14,4 @@ An application for visualizing sorting algorithms.
 ## Built with
 
 * [ReactJS](https://reactjs.org/docs/hello-world.html)
+* [Bootstrap](https://react-bootstrap.github.io/)
