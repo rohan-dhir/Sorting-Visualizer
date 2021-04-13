@@ -1,6 +1,7 @@
 .arr-container {
-  position: absolute;
-  left: 100px;
+  margin: auto;
+  margin-top: 5%;
+  width: 100%;
 }
 
 .arr-bar {
@@ -8,4 +9,27 @@
   background-color: #0ac476;
   display: inline-block;
   margin: 0 1px;
+}
+
+.btn {
+  color: white;
+  border-color: white;
+}
+
+.btn:hover {
+  color: white;
+  border-color: #263238;
+  background-color: #263238;
+}
+
+.nav {
+  background-color: #f0a30a;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #647e8b !important;
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getMergeSortAnimations } from '../sortingAlgorithms/MergeSort';
+import { Button, Nav, Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './visualizer.css';
 
 const ANIMATION_SPEED_MS = 1;
@@ -54,21 +56,36 @@ const Visualizer = () => {
         }
     }
 
+    const NavBar = () => {
+        return (
+            <>
+                <Navbar className="nav" variant="dark">
+                    <Navbar.Brand href="#">Sorting Visualizer</Navbar.Brand>
+                    <Nav className="mr-auto">
+                        <Nav.Link className="nav-link" onClick={() => mergeSort()}>Merge Sort</Nav.Link>
+                    </Nav>
+                    <Button className="btn" variant="outline-info" onClick={() => resetArray()}>Reset Array</Button>
+                </Navbar>
+            </>
+        );
+    }
+
     return (
-        <div className="arr-container">
-            {arr.map((value, index) => (
-                <div
-                className="arr-bar"
-                key={index}
-                style={{
-                    backgroundColor: PRIMARY_COLOR,
-                    height: `${value}px`
-                    }}>
-                </div>
-            ))}
-            <button onClick={() => resetArray()}>Reset Array</button>
-            <button onClick={() => mergeSort()}>Merge Sort</button>
-        </div>
+        <> 
+           <NavBar />
+            <div className="arr-container">
+                {arr.map((value, index) => (
+                    <div
+                    className="arr-bar"
+                    key={index}
+                    style={{
+                        backgroundColor: PRIMARY_COLOR,
+                        height: `${value}px`
+                        }}>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 };
 
