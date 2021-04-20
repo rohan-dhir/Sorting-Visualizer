@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Header/NavBar';
 import { getMergeSortAnimations } from '../sortingAlgorithms/MergeSort';
+import { getQuickSortAnimations } from '../sortingAlgorithms/QuickSort';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './visualizer.css';

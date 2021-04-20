@@ -8,7 +8,8 @@ const NavBar = ({
 }) => {
 
     const algorithms = [
-        'Merge Sort'
+        'Merge Sort',
+        'Quick Sort'
     ];
     return (
         <>
