@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from './Header/NavBar';
 import { getMergeSortAnimations } from '../sortingAlgorithms/MergeSort';
-import { Button, Nav, Navbar } from 'react-bootstrap';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './visualizer.css';
 
 const ANIMATION_SPEED_MS = 1;
-const ARRAY_BARS = 310;
+const ARRAY_SIZE = 310;
 const PRIMARY_COLOR = '#0ac476';
 const SECONDARY_COLOR = 'red';
 
@@ -13,12 +14,14 @@ const Visualizer = () => {
     const [arr, setArr] = useState([]);
     
     useEffect(() => { 
-        resetArray();
+        generateArray();
     }, []);
 
-    const resetArray = () => {
-        const arr = []
-        for (let i = 0; i < ARRAY_BARS; i++) {
+    const generateArray = () => {
+
+        let arr = [];
+
+        for (let i = 0; i < ARRAY_SIZE; i++) {
             arr.push(randomIntegers(5, 730))
         }
 
@@ -29,7 +32,7 @@ const Visualizer = () => {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    const mergeSort = () => {
+    const startVisualization = () => {
         const animations = getMergeSortAnimations(arr);
 
         for (let i = 0; i < animations.length; i++) {
@@ -54,25 +57,11 @@ const Visualizer = () => {
             }, i * ANIMATION_SPEED_MS);
             }
         }
-    }
-
-    const NavBar = () => {
-        return (
-            <>
-                <Navbar className="nav" variant="dark">
-                    <Navbar.Brand href="#">Sorting Visualizer</Navbar.Brand>
-                    <Nav className="mr-auto">
-                        <Nav.Link className="nav-link" onClick={() => mergeSort()}>Merge Sort</Nav.Link>
-                    </Nav>
-                    <Button className="btn" variant="outline-info" onClick={() => resetArray()}>Reset Array</Button>
-                </Navbar>
-            </>
-        );
-    }
+    };
 
     return (
         <> 
-           <NavBar />
+           <NavBar onClick={startVisualization} onReset={generateArray} />
             <div className="arr-container">
                 {arr.map((value, index) => (
                     <div
