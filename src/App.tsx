@@ -1,8 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
 import Visualizer from './components/Visualizer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Visualizer />

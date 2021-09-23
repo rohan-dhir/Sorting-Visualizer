@@ -13,23 +13,43 @@
 
 .btn {
   color: white;
-  border-color: white;
+  border-color: #0ac476;
+  background-color: #0ac476;
+  margin-left: 5px;
 }
 
 .btn:hover {
   color: white;
-  border-color: #263238;
-  background-color: #263238;
+  border-color: #0ca163;
+  background-color: #0ca163;
 }
 
-.nav {
-  background-color: #f0a30a;
+.btn:focus {
+  color: white;
+  border-color: #01e083;
+  background-color: #01e083;
 }
 
-.nav-link {
-  color: white !important;
+.dropdownToggle {
+  background-color: #636c70;
+  border-color: #636c70;
 }
 
-.nav-link:hover {
-  color: #647e8b !important;
+.dropdownToggle:hover {
+  background-color: #42484b;
+  border-color: #42484b;
+}
+
+.dropdownToggle:focus {
+  background-color: #636c70;
+  border-color: #636c70;
+}
+
+.navItem-text {
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.navItem {
+  padding: 5px;
 }
