@@ -17,7 +17,7 @@ export const useArray = (initialState: Array<Number>  = ([])) => {
        let arr: Array<Number> = [];
 
         for (let i = 0; i < arraySize; i++) {
-            arr.push(randomIntegers(5, 730))
+            arr.push(randomIntegers(5, 650))
         }
         setArr(arr)
     };
